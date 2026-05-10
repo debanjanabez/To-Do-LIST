@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="app">
+    <header class="header">
+      <div class="header-top">
+        <span class="date" id="today-date"></span>
+        <div class="stats">
+          <span id="done-count">0</span>/<span id="total-count">0</span> done
+        </div>
+      </div>
+      <h1 class="title">My Tasks</h1>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </header>
+
+    <div class="input-row">
+      <input
+        type="text"
+        id="todo-input"
+        class="todo-input"
+        placeholder="Add a new task..."
+        maxlength="100"
+      />
+      <button class="add-btn" id="add-btn" aria-label="Add task">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="done">Done</button>
+    </div>
+
+    <ul class="todo-list" id="todo-list">
+      <!-- tasks render here -->
+    </ul>
+
+    <div class="empty-state" id="empty-state">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <rect x="8" y="12" width="32" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+        <path d="M16 8h16M19 22h10M19 30h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <p>No tasks yet. Add one above!</p>
+    </div>
+
+    <div class="footer" id="footer" style="display:none">
+      <button class="clear-btn" id="clear-btn">Clear completed</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
